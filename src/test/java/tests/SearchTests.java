@@ -17,6 +17,18 @@ public class SearchTests extends TestBase {
     @Test
     void successfulSearchTest() {
 
+        WikipediaMainScreen mainPage = new WikipediaMainScreen();
+
+        mainPage
+                .searchQuery("Appium")
+                .openArticle(0);
+
+        mainPage
+                .checkSearchResult(1);
+
+
+
+
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
@@ -31,37 +43,16 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    void unSuccessfulSearchTest2() {
+    void unSuccessfulSearchTest() {
 
         WikipediaMainScreen mainPage = new WikipediaMainScreen();
         WikipediaErrorScreen errorPage = new WikipediaErrorScreen();
 
         mainPage
-                .searchQuery("Search Wikipedia")
+                .searchQuery("Appium")
                 .openArticle(0);
 
         errorPage
                 .checkError("An error occurred");
-
-
-
-
-        /*step("Type search", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
-        });
-
-        $$(id("org.wikipedia.alpha:id/page_list_item_title")).get(0).click();
-
-
-        step("Verify content", () -> {
-            $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(visible);
-        });*/
-
-
     }
-
-
-
-
 }
