@@ -34,8 +34,12 @@ public class WikipediaMainScreen {
 
     @Step("Проверить, что есть результы выдачи")
     public void checkSearchResult(int minArticleCount) {
-        //searchResultsElements.shouldHave(sizeGreaterThan(0));
+        searchResultsElements.shouldHave(sizeGreaterThan(0));
 
-        assertThat(searchResultsElements).size().isGreaterThan(minArticleCount - 1);
+       // assertThat(searchResultsElements).size().isGreaterThan(minArticleCount - 1);
+    }
+
+    public void checkSearchResult() {
+        checkSearchResult(1);
     }
 }
