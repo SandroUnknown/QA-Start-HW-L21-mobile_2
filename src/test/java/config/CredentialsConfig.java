@@ -2,7 +2,7 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:project.properties"})
+@Config.Sources({"classpath:properties/project.properties"})
 
 public interface CredentialsConfig extends Config {
 
