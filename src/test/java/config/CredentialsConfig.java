@@ -11,10 +11,10 @@ public interface CredentialsConfig extends Config {
     String getRemoteUrl();
 
     @Key("user")
-    @DefaultValue("alex_qN6X0H")
+    //@DefaultValue("alex_qN6X0H")
     String getUser();
 
     @Key("key")
-    @DefaultValue("r9siN8SFjHzuw37LHuDc")
+    //@DefaultValue("r9siN8SFjHzuw37LHuDc")
     String getKey();
 }
