@@ -17,7 +17,9 @@ public class WikipediaErrorScreen {
     @Step("Проверить, что произошла ошибка")
     public void checkError(String textError) {
 
-        //errorFieldElement.shouldBe(visible);
-        assertThat(errorTextElements).isEqualTo(textError);
+        errorFieldElement.shouldBe(visible);
+        //assertThat(errorTextElements).isEqualTo(textError);
+        var a = errorFieldElement.getAttribute("text");
+        assertThat(a).isEqualTo(textError);
     }
 }
