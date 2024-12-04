@@ -24,10 +24,6 @@ public class BrowserstackDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
-        //CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-        //EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
-        //AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
-
         MutableCapabilities caps = new MutableCapabilities();
 
         caps.setCapability("browserstack.user", credentialsConfig.getUser());
@@ -48,7 +44,5 @@ public class BrowserstackDriver implements WebDriverProvider {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }

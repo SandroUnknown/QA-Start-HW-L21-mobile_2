@@ -17,6 +17,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
+
         Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
@@ -24,27 +25,21 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open();
     }
 
     @AfterEach
     void addAttachments() {
+
         String sessionId = Selenide.sessionId().toString();
 
-        //Attach.screenshotAs("Last screenshot"); // todo fix
+        //TODO: fix
+        //Attach.screenshotAs("Last screenshot");
+
         Attach.pageSource();
         closeWebDriver();
-
         Attach.addVideo(sessionId);
     }
-
-
-
-
-
-
-
-
-
 }

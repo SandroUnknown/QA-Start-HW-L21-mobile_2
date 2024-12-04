@@ -31,6 +31,7 @@ public class WikipediaMainScreen {
     }
 
     public WikipediaMainScreen openArticle() {
+
         return openArticle(0);
     }
 
@@ -41,6 +42,7 @@ public class WikipediaMainScreen {
     }
 
     public void checkSearchResult() {
+
         checkSearchResult(1);
     }
 }
