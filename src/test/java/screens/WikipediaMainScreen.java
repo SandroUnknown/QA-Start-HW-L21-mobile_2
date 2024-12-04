@@ -4,7 +4,6 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.*;
@@ -15,7 +14,6 @@ public class WikipediaMainScreen {
 
     private final SelenideElement searchElement = $(id("org.wikipedia.alpha:id/search_src_text"));
     private final ElementsCollection articlesListElements = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
-    private final ElementsCollection searchResultsElements = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
 
     @Step("Написать запрос в поле поиска")
     public WikipediaMainScreen searchQuery(String query) {
@@ -32,11 +30,14 @@ public class WikipediaMainScreen {
         return this;
     }
 
+    public WikipediaMainScreen openArticle() {
+        return openArticle(0);
+    }
+
     @Step("Проверить, что есть результы выдачи")
     public void checkSearchResult(int minArticleCount) {
-        //searchResultsElements.shouldHave(sizeGreaterThan(0));
 
-        assertThat(searchResultsElements).size().isGreaterThan(minArticleCount - 1);
+        assertThat(articlesListElements).size().isGreaterThan(minArticleCount - 1);
     }
 
     public void checkSearchResult() {
