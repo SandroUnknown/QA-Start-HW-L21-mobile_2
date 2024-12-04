@@ -1,6 +1,8 @@
 package tests.android;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,7 @@ import tests.TestBase;
 public class AndroidTests extends TestBase {
 
     @Test
+    @Feature("Позитивная проверка")
     @DisplayName("Проверить, что поиск статей работает")
     void successfulSearchTest() {
 
@@ -27,7 +30,8 @@ public class AndroidTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверить, что открытие статьи из результата поиска НЕ работает (негативный тест)")
+    @Feature("Негативная проверка")
+    @DisplayName("Проверить, что открытие статьи из результата поиска НЕ работает")
     void unsuccessfulOpenArticleTest() {
 
         WikipediaMainScreen mainPage = new WikipediaMainScreen();
