@@ -18,12 +18,7 @@ public class WikipediaErrorScreen {
     public void checkError(String textError) {
 
         //errorFieldElement.shouldBe(visible);
-        //assertThat(errorTextElements).isEqualTo(textError);
-
-
-
-
-        //var a = errorFieldElement.getAttribute("text");
+        assertThat(errorFieldElement).isNotNull();
         assertThat(errorFieldElement.getAttribute("text"))
                 .isEqualTo(textError);
     }
