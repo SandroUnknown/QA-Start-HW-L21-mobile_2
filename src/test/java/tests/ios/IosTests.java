@@ -4,13 +4,11 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import screens.ios.SampleAppMainScreen;
+import screens.ios.SampleAppSearchScreen;
 import tests.TestBase;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
-import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.appium.java_client.AppiumBy.name;
 
 @Tag("ios")
@@ -19,18 +17,10 @@ import static io.appium.java_client.AppiumBy.name;
 public class IosTests extends TestBase {
 
     //@Test
-    void successfulSearchTest() {
-
-        //$("XCUIElementTypeStaticText").click();
-        $("Text").click();
-
-    }
-
-    @Test
-    public void searchTest() {
+    public void successfulSearchTest() {
 
         String query = "Appium";
-        SampleAppMainScreen searchScreen = new SampleAppMainScreen();
+        SampleAppSearchScreen searchScreen = new SampleAppSearchScreen();
 
         searchScreen
                 .clickSearchField()
@@ -38,23 +28,12 @@ public class IosTests extends TestBase {
 
         searchScreen
                 .checkSearchResult(query);
-
-/*
-        String searchQuery = "Appium";
-
-            $(accessibilityId("Text Button")).click();
-
-            $(accessibilityId("Text Input")).sendKeys(searchQuery);
-            $(accessibilityId("Text Input")).pressEnter();
-
-            $(accessibilityId("Text Output")).shouldHave(text(searchQuery));*/
-
     }
 
-    //@Test
+    @Test
     public void visibleMainPageTest() {
 
-            $(name("Alert")).shouldBe(visible);
+            $(name("Alert")).shouldBe(exist);
             $(name("Text")).shouldBe(visible);
 
     }
