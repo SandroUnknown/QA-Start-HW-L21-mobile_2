@@ -4,6 +4,7 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import screens.ios.SampleAppMainScreen;
 import screens.ios.SampleAppSearchScreen;
 import tests.TestBase;
 
@@ -33,8 +34,15 @@ public class IosTests extends TestBase {
     @Test
     public void visibleMainPageTest() {
 
-            $(name("Aler12")).shouldBe(exist);
-            $(name("Text")).shouldBe(exist);
+        SampleAppMainScreen mainScreen = new SampleAppMainScreen();
+
+        mainScreen
+                .checkExistText("Text")
+                .checkExistText("Alert");
+
+
+            //$(name("Alert")).shouldBe(exist);
+            //$(name("Text")).shouldBe(exist);
 
     }
 

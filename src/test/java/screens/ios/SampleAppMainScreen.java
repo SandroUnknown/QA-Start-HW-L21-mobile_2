@@ -3,8 +3,10 @@ package screens.ios;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.accessibilityId;
+import static io.appium.java_client.AppiumBy.name;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SampleAppMainScreen {
@@ -13,25 +15,10 @@ public class SampleAppMainScreen {
     private final SelenideElement inputElement = $(accessibilityId("Text Input"));
     private final SelenideElement outputElement = $(accessibilityId("Text Output"));
 
-    @Step("Нажать в поле для поиска")
-    public SampleAppMainScreen clickSearchField() {
+    @Step("Проверить наличие надписи")
+    public SampleAppMainScreen checkExistText(String text) {
 
-        buttonElement.click();
+        $(name(text)).shouldBe(exist);
         return this;
-    }
-
-    @Step("Написать запрос в поле поиска")
-    public SampleAppMainScreen searchQuery(String query) {
-
-        inputElement.sendKeys(query);
-        inputElement.pressEnter();
-        return this;
-    }
-
-    @Step("Проверить результат выдачи")
-    public void checkSearchResult(String expectedText) {
-
-        String actualText = outputElement.getText();
-        assertThat(actualText).contains(expectedText);
     }
 }
