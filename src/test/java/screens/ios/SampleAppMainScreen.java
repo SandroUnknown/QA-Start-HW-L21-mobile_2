@@ -33,10 +33,10 @@ public class SampleAppMainScreen {
     }
 
     @Step("Проверить результат выдачи")
-    public void checkSearchResult(String query) {
+    public void checkSearchResult(String expectedText) {
 
-        System.out.println(assertThat(outputElement.getText()));
-        assertThat(outputElement.getText()).contains(query);
+        String actualText = outputElement.getText();
+        assertThat(actualText).contains(expectedText);
         //outputElement.shouldHave(text(query));
     }
 
