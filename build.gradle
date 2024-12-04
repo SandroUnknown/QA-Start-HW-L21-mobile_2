@@ -38,7 +38,7 @@ dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "com.codeborne:selenide:$selenideVersion",
-            //"io.rest-assured:rest-assured:$restAssuredVersion",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.assertj:assertj-core:$assertjVersion",
             "io.github.bonigarcia:webdrivermanager:$webdrivermanagerVersion",
