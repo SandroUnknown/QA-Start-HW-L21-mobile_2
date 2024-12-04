@@ -39,12 +39,5 @@ public class IosTests extends TestBase {
         mainScreen
                 .checkExistText("Text")
                 .checkExistText("Alert");
-
-
-            //$(name("Alert")).shouldBe(exist);
-            //$(name("Text")).shouldBe(exist);
-
     }
-
-
 }
