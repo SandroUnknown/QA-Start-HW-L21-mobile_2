@@ -1,18 +1,11 @@
 package helpers;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-import static com.codeborne.selenide.Selenide.sessionId;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static java.lang.String.format;
-import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
     
@@ -30,7 +23,6 @@ public class Attach {
     public static String attachAsText(String attachName, String message) {
         return message;
     }
-
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo(String sessionId) {
