@@ -34,7 +34,7 @@ public class WikipediaMainScreen {
         return openArticle(0);
     }
 
-    @Step("Проверить, что есть результы выдачи")
+    @Step("Проверить, что есть результаты выдачи")
     public void checkSearchResult(int minArticleCount) {
 
         assertThat(articlesListElements).size().isGreaterThan(minArticleCount - 1);
