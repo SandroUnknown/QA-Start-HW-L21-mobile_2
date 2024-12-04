@@ -12,13 +12,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WikipediaErrorScreen {
 
     private final SelenideElement errorFieldElement = $(id("org.wikipedia.alpha:id/view_wiki_error_text"));
-    private final String errorTextElements = errorFieldElement.$$(className("android.widget.TextView")).get(0).getAttribute("text");
 
     @Step("Проверить, что произошла ошибка")
     public void checkError(String textError) {
 
         //errorFieldElement.shouldBe(visible);
         assertThat(errorFieldElement).isNotNull();
+        //String errorOnPage = errorFieldElement.getAttribute("text");
         assertThat(errorFieldElement.getAttribute("text"))
                 .isEqualTo(textError);
     }

@@ -38,7 +38,7 @@ public class SearchTests extends TestBase {
 
         mainPage
                 .searchQuery("Search Wikipedia")
-                .openArticle(1);
+                .openArticle(0);
 
         errorPage
                 .checkError("An error occurred");
