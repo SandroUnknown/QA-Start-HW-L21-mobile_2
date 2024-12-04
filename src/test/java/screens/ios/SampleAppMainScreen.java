@@ -1,14 +1,10 @@
 package screens.ios;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.accessibilityId;
-import static io.appium.java_client.AppiumBy.id;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SampleAppMainScreen {
@@ -37,9 +33,5 @@ public class SampleAppMainScreen {
 
         String actualText = outputElement.getText();
         assertThat(actualText).contains(expectedText);
-        //outputElement.shouldHave(text(query));
     }
-
-
-
 }
