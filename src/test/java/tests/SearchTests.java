@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import screens.WikipediaErrorScreen;
 import screens.WikipediaMainScreen;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -33,10 +34,16 @@ public class SearchTests extends TestBase {
     void unSuccessfulSearchTest2() {
 
         WikipediaMainScreen mainPage = new WikipediaMainScreen();
+        WikipediaErrorScreen errorPage = new WikipediaErrorScreen();
 
         mainPage
                 .searchQuery("Search Wikipedia")
                 .openArticle(1);
+
+        errorPage
+                .checkError("An error occurred");
+
+
 
 
         /*step("Type search", () -> {
@@ -44,12 +51,12 @@ public class SearchTests extends TestBase {
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
         });
 
-        $$(id("org.wikipedia.alpha:id/page_list_item_title")).get(0).click();*/
+        $$(id("org.wikipedia.alpha:id/page_list_item_title")).get(0).click();
 
 
         step("Verify content", () -> {
             $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(visible);
-        });
+        });*/
 
 
     }
