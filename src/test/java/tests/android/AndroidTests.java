@@ -10,6 +10,7 @@ import tests.TestBase;
 
 @Tag("android")
 @Owner("Petyukov Alexander")
+@DisplayName("Проверки для Android")
 public class AndroidTests extends TestBase {
 
     @Test
@@ -27,7 +28,7 @@ public class AndroidTests extends TestBase {
 
     @Test
     @DisplayName("Проверить, что открытие статьи из результата поиска НЕ работает (негативный тест)")
-    void unsuccessfulSearchTest() {
+    void unsuccessfulOpenArticleTest() {
 
         WikipediaMainScreen mainPage = new WikipediaMainScreen();
         WikipediaErrorScreen errorPage = new WikipediaErrorScreen();
