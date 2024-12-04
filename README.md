@@ -1,4 +1,9 @@
-# <p align="center">Домашнее задание к уроку <br> 20. Мобильная автоматизация #1. <br> Разрабатываем автотесты с Browserstack</p>
+# <p align="center">Домашнее задание к уроку #20
+<br> 
+Мобильная автоматизация #1.
+<br>
+Разрабатываем автотесты с Browserstack
+</p>
 
  ## Задание:
 - [x] Зарегистрировать аккаунт в [`browserstack.com`]([https://flat-soft.ru/](https://browserstack.com/));
