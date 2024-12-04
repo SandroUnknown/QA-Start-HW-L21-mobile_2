@@ -11,10 +11,10 @@ import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
 
-    /*
-    //@Test
-    void successfulSearchTest() {
 
+    @Test
+    void successfulSearchTest() {
+/*
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
@@ -23,11 +23,21 @@ public class SearchTests extends TestBase {
         step("Verify content found", () ->
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
-    }
 
      */
 
+        step("Type search", () -> {
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
+        });
 
+
+        //Appius Claudius Caecus
+        //Expand table
+
+
+        $(id("org.wikipedia.alpha:id/page_list_item_title")).click();
+    }
 
     @Test
     void successfulSearchTest2() {
