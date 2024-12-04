@@ -2,7 +2,11 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:properties/project.properties"})
+//@Config.Sources({"classpath:properties/project.properties"})
+
+@Config.Sources({
+        "classpath:properties/${env}.properties"
+})
 public interface AppConfig extends Config {
 
     @Key("app")
