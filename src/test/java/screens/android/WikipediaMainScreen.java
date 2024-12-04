@@ -1,4 +1,4 @@
-package screens;
+package screens.android;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -15,10 +15,16 @@ public class WikipediaMainScreen {
     private final SelenideElement searchElement = $(id("org.wikipedia.alpha:id/search_src_text"));
     private final ElementsCollection articlesListElements = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
 
+    @Step("Нажать в поле для поиска")
+    public WikipediaMainScreen clickSearchField() {
+
+        $(accessibilityId("Search Wikipedia")).click();
+        return this;
+    }
+
     @Step("Написать запрос в поле поиска")
     public WikipediaMainScreen searchQuery(String query) {
 
-        $(accessibilityId("Search Wikipedia")).click();
         searchElement.sendKeys(query);
         return this;
     }

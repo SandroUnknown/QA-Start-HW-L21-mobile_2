@@ -5,8 +5,8 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import screens.WikipediaErrorScreen;
-import screens.WikipediaMainScreen;
+import screens.android.WikipediaErrorScreen;
+import screens.android.WikipediaMainScreen;
 import tests.TestBase;
 
 @Tag("android")
@@ -19,12 +19,13 @@ public class AndroidTests extends TestBase {
     @DisplayName("Проверить, что поиск статей работает")
     void successfulSearchTest() {
 
-        WikipediaMainScreen mainPage = new WikipediaMainScreen();
+        WikipediaMainScreen mainScreen = new WikipediaMainScreen();
 
-        mainPage
+        mainScreen
+                .clickSearchField()
                 .searchQuery("Appium");
 
-        mainPage
+        mainScreen
                 .checkSearchResult();
     }
 
@@ -33,14 +34,15 @@ public class AndroidTests extends TestBase {
     @DisplayName("Проверить, что открытие статьи из результата поиска НЕ работает")
     void unsuccessfulOpenArticleTest() {
 
-        WikipediaMainScreen mainPage = new WikipediaMainScreen();
-        WikipediaErrorScreen errorPage = new WikipediaErrorScreen();
+        WikipediaMainScreen mainScreen = new WikipediaMainScreen();
+        WikipediaErrorScreen errorScreen = new WikipediaErrorScreen();
 
-        mainPage
+        mainScreen
+                .clickSearchField()
                 .searchQuery("Appium")
                 .openArticle(0);
 
-        errorPage
+        errorScreen
                 .checkError("An error occurred");
     }
 }

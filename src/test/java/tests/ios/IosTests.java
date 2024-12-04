@@ -1,13 +1,10 @@
 package tests.ios;
 
-import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import screens.WikipediaErrorScreen;
-import screens.WikipediaMainScreen;
+import screens.ios.SampleAppMainScreen;
 import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
@@ -31,15 +28,26 @@ public class IosTests extends TestBase {
 
     @Test
     public void searchTest() {
+
+        String query = "Appium";
+        SampleAppMainScreen searchScreen = new SampleAppMainScreen();
+
+        searchScreen
+                .clickSearchField()
+                .searchQuery(query);
+
+        searchScreen
+                .checkSearchResult(query);
+
+/*
         String searchQuery = "Appium";
 
             $(accessibilityId("Text Button")).click();
 
-            //$(accessibilityId("Text Input")).sendKeys(searchQuery + "\n");
             $(accessibilityId("Text Input")).sendKeys(searchQuery);
             $(accessibilityId("Text Input")).pressEnter();
 
-            $(accessibilityId("Text Output")).shouldHave(text(searchQuery));
+            $(accessibilityId("Text Output")).shouldHave(text(searchQuery));*/
 
     }
 
