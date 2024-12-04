@@ -35,7 +35,8 @@ public class IosTests extends TestBase {
 
             $(accessibilityId("Text Button")).click();
 
-            $(accessibilityId("Text Input")).sendKeys(searchQuery + "\n");
+            //$(accessibilityId("Text Input")).sendKeys(searchQuery + "\n");
+            $(accessibilityId("Text Input")).sendKeys(searchQuery);
 
             $(accessibilityId("Text Output")).shouldHave(text(searchQuery));
 
