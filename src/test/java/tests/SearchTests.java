@@ -12,9 +12,9 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
 
-    @Test
+   /* @Test
     void successfulSearchTest() {
-/*
+
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
@@ -24,20 +24,9 @@ public class SearchTests extends TestBase {
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
 
-     */
-
-        step("Type search", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
-        });
 
 
-        //Appius Claudius Caecus
-        //Expand table
-
-
-        $(id("org.wikipedia.alpha:id/page_list_item_title")).click();
-    }
+    }*/
 
     @Test
     void successfulSearchTest2() {
@@ -52,10 +41,13 @@ public class SearchTests extends TestBase {
         //Expand table
 
 
-        $(id("org.wikipedia.alpha:id/page_list_item_title")).click();
+        //$(id("org.wikipedia.alpha:id/page_list_item_title")).click();
+
         //$(byText("Appius Claudius Caecus")).click();
         //$(accessibilityId("Appius Claudius Caecus")).click();
-       // $(accessibilityId("Appius Claudius Caecus")).click();
+        //$(accessibilityId("Appium")).click();
+
+        $$(id("org.wikipedia.alpha:id/page_list_item_title")).get(1).click();
 
 
 
