@@ -47,7 +47,7 @@ public class SearchTests extends TestBase {
         //$(accessibilityId("Appius Claudius Caecus")).click();
         //$(accessibilityId("Appium")).click();
 
-        $$(id("org.wikipedia.alpha:id/page_list_item_title")).get(0).pressEnter();
+        $$(id("org.wikipedia.alpha:id/page_list_item_title")).get(0).click();
 
 
 
