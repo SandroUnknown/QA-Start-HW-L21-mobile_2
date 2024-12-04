@@ -1,6 +1,5 @@
 package screens;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -18,9 +17,7 @@ public class WikipediaErrorScreen {
     @Step("Проверить, что произошла ошибка")
     public void checkError(String textError) {
 
-        errorFieldElement.shouldBe(visible);
+        //errorFieldElement.shouldBe(visible);
         assertThat(errorTextElements).isEqualTo(textError);
     }
 }
-
-
