@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WikipediaErrorScreen {
 
     private final SelenideElement errorFieldElement = $(id("org.wikipedia.alpha:id/view_wiki_error_text"));
-    private final String errorTextElements = $$(className("android.widget.TextView")).get(0).getAttribute("text");
+    private final String errorTextElements = $$(className("android.widget.TextView")).get(1).getAttribute("text");
 
     @Step("Проверить, что произошла ошибка")
     public void checkError(String textError) {
