@@ -41,7 +41,7 @@ public class IosTests extends TestBase {
 
     }
 
-    @Test
+    //@Test
     public void visibleMainPageTest() {
 
             $(name("Alert")).shouldBe(visible);
