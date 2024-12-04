@@ -35,6 +35,7 @@ public class SampleAppMainScreen {
     @Step("Проверить результат выдачи")
     public void checkSearchResult(String query) {
 
+        System.out.println(assertThat(outputElement.getText()));
         assertThat(outputElement.getText()).contains(query);
         //outputElement.shouldHave(text(query));
     }
