@@ -16,17 +16,17 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    //public static BrowserStackConfig bsConfig = ConfigFactory.create(BrowserStackConfig.class, System.getProperties());
-    //public static DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
+    public static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+    public static EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
+    public static AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
-        CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-        EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
-        AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
-
+        //CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+        //EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
+        //AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
         MutableCapabilities caps = new MutableCapabilities();
 
