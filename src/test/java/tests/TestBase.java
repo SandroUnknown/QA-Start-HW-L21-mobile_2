@@ -1,43 +1,51 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-//import config.ConfigRunner;
-//import helpers.Attach;
+import drivers.BrowserstackDriver;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
     @BeforeAll
-    public static void setUp() {
-
-        RestAssured.baseURI = "https://demoqa.com";
-        Configuration.baseUrl = "https://demoqa.com";
-
-        //new ConfigRunner();
+    static void beforeAll() {
+        Configuration.browser = BrowserstackDriver.class.getName();
+        Configuration.browserSize = null;
+        Configuration.timeout = 30000;
     }
 
     @BeforeEach
-    void preTest() {
-
+    void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        open();
     }
 
     @AfterEach
     void addAttachments() {
-/*
-        Attach.screenshotAs("Last screenshot");
-        if (!Configuration.browser.equals("firefox")) {
-            Attach.pageSource();
-            Attach.browserConsoleLogs();
-        }
-        Attach.addVideo();
-        closeWebDriver();*/
+        String sessionId = Selenide.sessionId().toString();
+        //System.out.println(sessionId);
+
+//        Attach.screenshotAs("Last screenshot"); // todo fix
+        Attach.pageSource();
+        closeWebDriver();
+
+        //Attach.addVideo(sessionId);
     }
+
+
+
+
+
+
+
+
+
 }

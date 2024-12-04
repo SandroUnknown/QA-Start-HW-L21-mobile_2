@@ -8,12 +8,13 @@ group = 'gmail.sandrounknown1991'
 version = '1.0-SNAPSHOT'
 
 def junitVersion = "5.11.3",
-    selenideVersion = "7.5.1",
+    selenideVersion = "6.13.0",
     restAssuredVersion = "5.5.0",
     allureVersion = "2.29.0",
     assertjVersion = "3.24.2",
     webdrivermanagerVersion = "5.9.2",
-    ownerVersion = "1.0.12"
+    ownerVersion = "1.0.12",
+    appiumVersion = "8.3.0"
 
 
 repositories {
@@ -45,6 +46,7 @@ dependencies {
             "org.assertj:assertj-core:$assertjVersion",
             "io.github.bonigarcia:webdrivermanager:$webdrivermanagerVersion",
             "org.aeonbits.owner:owner:$ownerVersion",
+            "io.appium:java-client:$appiumVersion"
     )
 }
 
