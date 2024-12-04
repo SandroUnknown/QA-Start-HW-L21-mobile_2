@@ -37,7 +37,7 @@ public class IosTests extends TestBase {
         SampleAppMainScreen mainScreen = new SampleAppMainScreen();
 
         mainScreen
-                .checkExistText("Text")
+                .checkExistText("Text1")
                 .checkExistText("Alert");
     }
 }
