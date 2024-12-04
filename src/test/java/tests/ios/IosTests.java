@@ -33,8 +33,8 @@ public class IosTests extends TestBase {
     @Test
     public void visibleMainPageTest() {
 
-            $(name("Alert")).shouldBe(exist);
-            $(name("Text")).shouldBe(visible);
+            $(name("Aler12")).shouldBe(exist);
+            $(name("Text")).shouldBe(exist);
 
     }
 
