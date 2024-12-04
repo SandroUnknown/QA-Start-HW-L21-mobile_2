@@ -22,7 +22,8 @@ public class IosTests extends TestBase {
     void successfulSearchTest() {
 
 
-        $("XCUIElementTypeStaticText").click();
+        //$("XCUIElementTypeStaticText").click();
+        $("Text").click();
 
     }
 
