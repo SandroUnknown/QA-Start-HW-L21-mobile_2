@@ -11,6 +11,7 @@ import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
 
+    /*
     //@Test
     void successfulSearchTest() {
 
@@ -23,6 +24,8 @@ public class SearchTests extends TestBase {
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
+
+     */
 
 
 
