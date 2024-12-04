@@ -3,8 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:properties/${env}.properties"//,
-        //"classpath:properties/project.properties"
+        "classpath:properties/${env}.properties"
 })
 
 public interface EnvironmentConfig extends Config {
