@@ -22,7 +22,7 @@ public class AndroidTests extends TestBase {
         WikipediaMainScreen mainScreen = new WikipediaMainScreen();
 
         mainScreen
-                .clickSearchField()
+                //.clickSearchField()
                 .searchQuery("Appium");
 
         mainScreen
@@ -38,7 +38,7 @@ public class AndroidTests extends TestBase {
         WikipediaErrorScreen errorScreen = new WikipediaErrorScreen();
 
         mainScreen
-                .clickSearchField()
+                //.clickSearchField()
                 .searchQuery("Appium")
                 .openArticle(0);
 
