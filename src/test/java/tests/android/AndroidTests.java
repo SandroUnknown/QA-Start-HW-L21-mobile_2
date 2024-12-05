@@ -24,11 +24,7 @@ public class AndroidTests extends TestBase {
         WikipediaSearchResultScreen searchResultScreen = new WikipediaSearchResultScreen();
 
         mainScreen.searchQuery("Appium");
-
         searchResultScreen.checkSearchResult();
-
-
-        //mainScreen.checkSearchResult();
     }
 
     @Test
@@ -40,14 +36,8 @@ public class AndroidTests extends TestBase {
         WikipediaSearchResultScreen searchResultScreen = new WikipediaSearchResultScreen();
         WikipediaErrorScreen errorScreen = new WikipediaErrorScreen();
 
-        mainScreen
-                //.clickSearchField()
-                .searchQuery("Appium");
-                //.openArticle(0);
-
+        mainScreen.searchQuery("Appium");
         searchResultScreen.openArticle(0);
-
-        errorScreen
-                .checkError("An error occurred");
+        errorScreen.checkError("An error occurred");
     }
 }
