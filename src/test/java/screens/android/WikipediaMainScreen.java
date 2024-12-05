@@ -21,7 +21,7 @@ public class WikipediaMainScreen {
 
         new SearchInputComponent().clickSearchField().searchQuery(query);
 
-        $(accessibilityId("Search Wikipedia")).click();
+        //$(accessibilityId("Search Wikipedia")).click();
         return this;
     }
 
