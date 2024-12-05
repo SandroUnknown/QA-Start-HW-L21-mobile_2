@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.android.WikipediaErrorScreen;
 import screens.android.WikipediaMainScreen;
+import screens.android.WikipediaSearchResultScreen;
 import tests.TestBase;
 
 @Tag("android")
@@ -20,13 +21,14 @@ public class AndroidTests extends TestBase {
     void successfulSearchTest() {
 
         WikipediaMainScreen mainScreen = new WikipediaMainScreen();
+        WikipediaSearchResultScreen searchResultScreen = new WikipediaSearchResultScreen();
 
-        mainScreen
-                //.clickSearchField()
-                .searchQuery("Appium");
+        mainScreen.searchQuery("Appium");
 
-        mainScreen
-                .checkSearchResult();
+        searchResultScreen.checkSearchResult();
+
+
+        //mainScreen.checkSearchResult();
     }
 
     @Test
@@ -35,12 +37,15 @@ public class AndroidTests extends TestBase {
     void unsuccessfulOpenArticleTest() {
 
         WikipediaMainScreen mainScreen = new WikipediaMainScreen();
+        WikipediaSearchResultScreen searchResultScreen = new WikipediaSearchResultScreen();
         WikipediaErrorScreen errorScreen = new WikipediaErrorScreen();
 
         mainScreen
                 //.clickSearchField()
-                .searchQuery("Appium")
-                .openArticle(0);
+                .searchQuery("Appium");
+                //.openArticle(0);
+
+        searchResultScreen.openArticle(0);
 
         errorScreen
                 .checkError("An error occurred");
