@@ -1,4 +1,4 @@
-package tests.ios;
+package tests.browserstack.ios;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -9,7 +9,7 @@ import screens.ios.SampleAppMainScreen;
 import screens.ios.SampleAppSearchScreen;
 import tests.TestBase;
 
-@Tag("ios")
+@Tag("browserstack_ios")
 @Owner("Petyukov Alexander")
 @DisplayName("Проверки для iOS")
 public class IosTests extends TestBase {

@@ -1,4 +1,4 @@
-package tests.android;
+package tests.local;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -10,7 +10,7 @@ import screens.android.WikipediaMainScreen;
 import screens.android.WikipediaSearchResultScreen;
 import tests.TestBase;
 
-@Tag("android")
+@Tag("local_android")
 @Owner("Petyukov Alexander")
 @DisplayName("Проверки для Android")
 public class AndroidTests extends TestBase {
