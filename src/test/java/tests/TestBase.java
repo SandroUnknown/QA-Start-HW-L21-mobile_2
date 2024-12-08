@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
+import drivers.LocalDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -15,17 +16,17 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    private static final String deviceHost = System.getProperty("deviceHost");
+    private static final String env = System.getProperty("env", "local");
 
     @BeforeAll
     static void beforeAll() {
 
-        /*switch (deviceHost) {
+        switch (env) {
             case "browserstack":
                 Configuration.browser = BrowserstackDriver.class.getName();
             case "local":
-                //Configuration.browser = LocalDriver.class.getName();
-        }*/
+                Configuration.browser = LocalDriver.class.getName();
+        }
 
         /*
         if (deviceHost.equals("browserstack")) {
@@ -36,7 +37,7 @@ public class TestBase {
 */
 
 
-        Configuration.browser = BrowserstackDriver.class.getName();
+        //Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }
@@ -53,15 +54,15 @@ public class TestBase {
 
         String sessionId = Selenide.sessionId().toString();
 
-        /*if (!deviceHost.equals("browserstack")) {
+        if (!env.equals("browserstack")) {
             Attach.screenshotAs("Last screenshot");
-        }*/
+        }
 
         Attach.pageSource();
         closeWebDriver();
 
-        //if (deviceHost.equals("browserstack")) {
+        if (env.equals("browserstack")) {
             Attach.addVideo(sessionId);
-        //}
+        }
     }
 }

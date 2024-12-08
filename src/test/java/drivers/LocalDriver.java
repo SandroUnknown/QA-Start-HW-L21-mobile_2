@@ -44,7 +44,7 @@ public class LocalDriver implements WebDriverProvider {
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
-    public static URL getAppiumServerUrl() {
+    private static URL getAppiumServerUrl() {
 
         try {
             return new URL(credentialsConfig.getRemoteUrl());
@@ -53,7 +53,6 @@ public class LocalDriver implements WebDriverProvider {
         }
     }
 
-    // TODO: Version?
     private String getAppPath() {
 
         String appVersion = appConfig.getVersion();

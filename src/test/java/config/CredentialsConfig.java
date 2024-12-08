@@ -2,7 +2,9 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:properties/${env}/credentials.properties"})
+@Config.Sources({
+        "classpath:properties/${env}/credentials.properties"
+})
 public interface CredentialsConfig extends Config {
 
     @Key("remoteUrl")
