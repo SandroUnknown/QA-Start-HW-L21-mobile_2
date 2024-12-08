@@ -4,7 +4,6 @@ import com.codeborne.selenide.WebDriverProvider;
 import config.AppConfig;
 import config.CredentialsConfig;
 import config.DeviceConfig;
-import config.TestConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
