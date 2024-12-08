@@ -12,7 +12,7 @@ import tests.TestBase;
 @Tag("browserstack_ios")
 @Owner("Petyukov Alexander")
 @DisplayName("Проверки для iOS")
-public class IosTests extends TestBase {
+public class BrowserstackIosTests extends TestBase {
 
     @Test
     @Feature("Страница поиска")

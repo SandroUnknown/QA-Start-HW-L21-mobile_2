@@ -24,6 +24,8 @@ public class BrowserstackDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
+        // TODO: Переделать заполнение капабилитис?
+
         MutableCapabilities caps = new MutableCapabilities();
 
         caps.setCapability("browserstack.user", credentialsConfig.getUser());

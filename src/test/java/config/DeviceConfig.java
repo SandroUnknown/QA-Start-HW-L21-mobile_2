@@ -4,6 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:properties/${env}/${os}.properties"
+        ,"classpath:properties/local/android.properties" // TODO: удалить
 })
 public interface DeviceConfig extends Config {
 

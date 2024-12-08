@@ -16,7 +16,8 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    private static final String env = System.getProperty("env", "local");
+    //private static final String env = System.getProperty("env", "local");
+    private static final String env = "local";  // TODO: удалить
 
     @BeforeAll
     static void beforeAll() {
@@ -24,20 +25,15 @@ public class TestBase {
         switch (env) {
             case "browserstack":
                 Configuration.browser = BrowserstackDriver.class.getName();
+                break;
             case "local":
                 Configuration.browser = LocalDriver.class.getName();
+                break;
         }
 
-        /*
-        if (deviceHost.equals("browserstack")) {
-            Configuration.browser = BrowserstackDriver.class.getName();
-        } else {
-            //Configuration.browser = LocalDriver.class.getName();
-        }
-*/
+        // TODO: удалить
+        // ./gradlew clean browserstack_android -Denv=browserstack -Dos=android -Duser=alexpe_goJPhE -Dkey=bhv4V3xFW5o6rTV3e1X7
 
-
-        //Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }

@@ -13,7 +13,7 @@ import tests.TestBase;
 @Tag("browserstack_android")
 @Owner("Petyukov Alexander")
 @DisplayName("Проверки для Android")
-public class AndroidTests extends TestBase {
+public class BrowserstackAndroidTests extends TestBase {
 
     @Test
     @Feature("Позитивная проверка")
