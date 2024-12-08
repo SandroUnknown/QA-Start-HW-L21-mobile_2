@@ -21,8 +21,6 @@ public class BrowserstackDriver implements WebDriverProvider {
     public static DeviceConfig environmentConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
     public static AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
-    public static TestConfig testConfig = ConfigFactory.create(TestConfig.class, System.getProperties());
-
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
@@ -47,28 +45,5 @@ public class BrowserstackDriver implements WebDriverProvider {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-
-        /*caps.setCapability("browserstack.user", testConfig.getUser());
-        caps.setCapability("browserstack.key", testConfig.getKey());
-
-        caps.setCapability("device", testConfig.getDevice());
-        caps.setCapability("os_version", testConfig.getVersion());
-
-        caps.setCapability("app", testConfig.getApp());
-
-        caps.setCapability("project", testConfig.getProjectName());
-        caps.setCapability("build", testConfig.getBuildName());
-        caps.setCapability("name", testConfig.getTestName());
-
-        try {
-            return new RemoteWebDriver(
-                    new URL(testConfig.getRemoteUrl()), caps);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }*/
-
-
-
-
     }
 }
