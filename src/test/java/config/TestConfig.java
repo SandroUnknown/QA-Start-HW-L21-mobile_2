@@ -23,25 +23,25 @@ public interface TestConfig extends Config {
     @DefaultValue("Samsung Galaxy S22 Ultra")
     String getDevice();
 
-    @Key("${env}.osVersion")
+    @Key("android.osVersion")
     @DefaultValue("12.0")
     String getVersion();
 
 
 
-    @Key("${env}.app")
+    @Key("android.app")
     @DefaultValue("bs://sample.app")
     String getApp();
 
-    @Key("${env}.projectName")
+    @Key("android.projectName")
     @DefaultValue("First Java Project")
     String getProjectName();
 
-    @Key("${env}.buildName")
+    @Key("android.buildName")
     @DefaultValue("browserstack-build-1")
     String getBuildName();
 
-    @Key("${env}.testName")
+    @Key("android.testName")
     @DefaultValue("My First Test")
     String getTestName();
 
