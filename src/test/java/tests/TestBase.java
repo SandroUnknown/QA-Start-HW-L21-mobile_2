@@ -20,12 +20,12 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
 
-        switch (deviceHost) {
+        /*switch (deviceHost) {
             case "browserstack":
                 Configuration.browser = BrowserstackDriver.class.getName();
             case "local":
                 //Configuration.browser = LocalDriver.class.getName();
-        }
+        }*/
 
         /*
         if (deviceHost.equals("browserstack")) {
@@ -36,7 +36,7 @@ public class TestBase {
 */
 
 
-        //Configuration.browser = BrowserstackDriver.class.getName();
+        Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }
