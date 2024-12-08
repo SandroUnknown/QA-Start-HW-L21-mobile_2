@@ -3,7 +3,7 @@ package drivers;
 import com.codeborne.selenide.WebDriverProvider;
 import config.AppConfig;
 import config.CredentialsConfig;
-import config.EnvironmentConfig;
+import config.DeviceConfig;
 import config.TestConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
@@ -18,7 +18,7 @@ import java.net.URL;
 public class BrowserstackDriver implements WebDriverProvider {
 
     public static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    public static EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
+    public static DeviceConfig environmentConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
     public static AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
     public static TestConfig testConfig = ConfigFactory.create(TestConfig.class, System.getProperties());

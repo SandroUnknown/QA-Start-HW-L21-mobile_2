@@ -1,28 +1,5 @@
 package drivers;
 
-import com.codeborne.selenide.WebDriverProvider;
-import config.AppConfig;
-import config.CredentialsConfig;
-import config.EnvironmentConfig;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
-import org.aeonbits.owner.ConfigFactory;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import javax.annotation.Nonnull;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
-import static io.appium.java_client.remote.MobilePlatform.ANDROID;
-import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
-
 
 //public static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
     //public static EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class, System.getProperties());
