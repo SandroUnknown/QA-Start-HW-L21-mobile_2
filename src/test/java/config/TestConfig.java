@@ -19,7 +19,7 @@ public interface TestConfig extends Config {
 
 
 
-    @Key("${env}.device")
+    @Key("android.device")
     @DefaultValue("Samsung Galaxy S22 Ultra")
     String getDevice();
 
