@@ -29,7 +29,7 @@ public class BrowserstackDriver implements WebDriverProvider {
 
         MutableCapabilities caps = new MutableCapabilities();
 
-        /*caps.setCapability("browserstack.user", credentialsConfig.getUser());
+        caps.setCapability("browserstack.user", credentialsConfig.getUser());
         caps.setCapability("browserstack.key", credentialsConfig.getKey());
 
         caps.setCapability("device", environmentConfig.getDevice());
@@ -46,9 +46,9 @@ public class BrowserstackDriver implements WebDriverProvider {
                     new URL(credentialsConfig.getRemoteUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
-        }*/
+        }
 
-        caps.setCapability("browserstack.user", testConfig.getUser());
+        /*caps.setCapability("browserstack.user", testConfig.getUser());
         caps.setCapability("browserstack.key", testConfig.getKey());
 
         caps.setCapability("device", testConfig.getDevice());
@@ -65,7 +65,7 @@ public class BrowserstackDriver implements WebDriverProvider {
                     new URL(testConfig.getRemoteUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
 
 
