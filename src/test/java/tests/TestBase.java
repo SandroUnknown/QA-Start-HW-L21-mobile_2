@@ -53,9 +53,9 @@ public class TestBase {
 
         String sessionId = Selenide.sessionId().toString();
 
-        if (!deviceHost.equals("browserstack")) {
+        /*if (!deviceHost.equals("browserstack")) {
             Attach.screenshotAs("Last screenshot");
-        }
+        }*/
 
         Attach.pageSource();
         closeWebDriver();
