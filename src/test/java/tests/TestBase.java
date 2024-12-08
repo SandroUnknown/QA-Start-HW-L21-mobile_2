@@ -15,10 +15,28 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
+    private static final String deviceHost = System.getProperty("deviceHost");
+
     @BeforeAll
     static void beforeAll() {
 
-        Configuration.browser = BrowserstackDriver.class.getName();
+        switch (deviceHost) {
+            case "browserstack":
+                Configuration.browser = BrowserstackDriver.class.getName();
+            case "local":
+                //Configuration.browser = LocalDriver.class.getName();
+        }
+
+        /*
+        if (deviceHost.equals("browserstack")) {
+            Configuration.browser = BrowserstackDriver.class.getName();
+        } else {
+            //Configuration.browser = LocalDriver.class.getName();
+        }
+*/
+
+
+        //Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }
@@ -35,11 +53,15 @@ public class TestBase {
 
         String sessionId = Selenide.sessionId().toString();
 
-        //TODO: fix
-        //Attach.screenshotAs("Last screenshot");
+        if (!deviceHost.equals("browserstack")) {
+            Attach.screenshotAs("Last screenshot");
+        }
 
         Attach.pageSource();
         closeWebDriver();
-        Attach.addVideo(sessionId);
+
+        if (deviceHost.equals("browserstack")) {
+            Attach.addVideo(sessionId);
+        }
     }
 }
