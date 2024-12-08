@@ -16,15 +16,13 @@ import java.net.URL;
 
 public class BrowserstackDriver implements WebDriverProvider {
 
-    public static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    public static DeviceConfig environmentConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
-    public static AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
+    public static final CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+    public static final DeviceConfig environmentConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
+    public static final AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-
-        // TODO: Переделать заполнение капабилитис?
 
         MutableCapabilities caps = new MutableCapabilities();
 

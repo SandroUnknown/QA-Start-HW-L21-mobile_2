@@ -16,8 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    //private static final String env = System.getProperty("env", "local");
-    private static final String env = "local";  // TODO: удалить
+    private static final String env = System.getProperty("env", "local");
 
     @BeforeAll
     static void beforeAll() {
@@ -30,9 +29,6 @@ public class TestBase {
                 Configuration.browser = LocalDriver.class.getName();
                 break;
         }
-
-        // TODO: удалить
-        // ./gradlew clean browserstack_android -Denv=browserstack -Dos=android -Duser=alexpe_goJPhE -Dkey=bhv4V3xFW5o6rTV3e1X7
 
         Configuration.browserSize = null;
         Configuration.timeout = 30000;

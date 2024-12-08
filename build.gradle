@@ -59,6 +59,10 @@ tasks.withType(Test) {
     }
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 task browserstack_android(type: Test) {
     useJUnitPlatform {
         includeTags("browserstack_android")

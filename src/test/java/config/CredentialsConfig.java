@@ -4,7 +4,6 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:properties/${env}/credentials.properties"
-        ,"classpath:properties/local/credentials.properties" // TODO: удалить
 })
 public interface CredentialsConfig extends Config {
 

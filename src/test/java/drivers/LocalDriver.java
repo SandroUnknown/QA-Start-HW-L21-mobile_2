@@ -23,9 +23,9 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalDriver implements WebDriverProvider {
 
-    public static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    public static DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
-    public static AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
+    public static final CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+    public static final DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
+    public static final AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
     @Nonnull
     @Override

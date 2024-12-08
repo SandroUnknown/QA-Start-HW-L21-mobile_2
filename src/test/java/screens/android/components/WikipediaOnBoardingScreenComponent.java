@@ -12,7 +12,7 @@ public class WikipediaOnBoardingScreenComponent {
     private static final SelenideElement secondaryTextLocator = $(id("org.wikipedia.alpha:id/secondaryTextView"));
 
     @Step("Проверить текст на странице")
-    public static void chechTextOnScreen(String expectedText) {
+    public static void checkTextOnScreen(String expectedText) {
 
         String actualText = $(secondaryTextLocator).getText();
         assertThat(actualText).contains(expectedText);
