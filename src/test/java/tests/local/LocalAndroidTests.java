@@ -19,15 +19,21 @@ public class LocalAndroidTests extends TestBase {
     @DisplayName("Проверить, что открываются все 4 страницы 'онбординга' и каждая содержит правильный текст")
     void successfulSearchTest() {
 
-        WikipediaOnBoardingScreenComponent.checkTextOnScreen("We’ve found the following on your device:");
-        WikipediaContinueButtonComponent.click();
+        WikipediaOnBoardingScreenComponent onBoardingScreen = new WikipediaOnBoardingScreenComponent();
+        WikipediaContinueButtonComponent continueButton = new WikipediaContinueButtonComponent();
 
-        WikipediaOnBoardingScreenComponent.checkTextOnScreen("Dive down the Wikipedia rabbit hole with a constantly updating Explore feed.");
-        WikipediaContinueButtonComponent.click();
+        onBoardingScreen.checkTextOnScreen("We’ve found the following on your device:");
+        continueButton.click();
 
-        WikipediaOnBoardingScreenComponent.checkTextOnScreen("You can make reading lists from articles you want to read later, even when you’re offline.");
-        WikipediaContinueButtonComponent.click();
+        onBoardingScreen.checkTextOnScreen("Dive down the Wikipedia rabbit hole " +
+                "with a constantly updating Explore feed.");
+        continueButton.click();
 
-        WikipediaOnBoardingScreenComponent.checkTextOnScreen("We believe that you should not have to provide personal information to participate in the free knowledge movement.");
+        onBoardingScreen.checkTextOnScreen("You can make reading lists from " +
+                "articles you want to read later, even when you’re offline.");
+        continueButton.click();
+
+        onBoardingScreen.checkTextOnScreen("We believe that you should not have " +
+                "to provide personal information to participate in the free knowledge movement.");
     }
 }

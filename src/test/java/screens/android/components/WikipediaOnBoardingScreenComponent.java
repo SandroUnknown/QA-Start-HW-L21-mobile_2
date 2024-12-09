@@ -9,12 +9,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class WikipediaOnBoardingScreenComponent {
 
-    private static final SelenideElement secondaryTextLocator = $(id("org.wikipedia.alpha:id/secondaryTextView"));
+    private final SelenideElement secondaryTextLocator = $(id("org.wikipedia.alpha:id/secondaryTextView"));
 
     @Step("Проверить текст на странице")
-    public static void checkTextOnScreen(String expectedText) {
+    public WikipediaOnBoardingScreenComponent checkTextOnScreen(String expectedText) {
 
         String actualText = $(secondaryTextLocator).getText();
         assertThat(actualText).contains(expectedText);
+        return this;
     }
 }

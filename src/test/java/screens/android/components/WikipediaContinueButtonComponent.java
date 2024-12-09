@@ -8,11 +8,11 @@ import static io.appium.java_client.AppiumBy.id;
 
 public class WikipediaContinueButtonComponent {
 
-    private static final SelenideElement continueButtonElement = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button"));
+    private final SelenideElement continueButtonElement = $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button"));
 
     @Step("Перейти на следующую страницу")
-    public static void click() {
+    public void click() {
 
-        $(continueButtonElement).click();
+        continueButtonElement.click();
     }
 }
